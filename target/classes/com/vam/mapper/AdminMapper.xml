@@ -5,6 +5,12 @@
   	<!-- 작가 등록 -->
   	<insert id="bookEnroll">
   	
+  	  	<selectKey resultType="int" keyProperty="bookId" order="AFTER">
+  		
+  			SELECT SELECT LAST_INSERT_ID()
+  		
+  		</selectKey>
+  	
   		insert into vam_book(bookName, authorId, publeYear, publisher, cateCode, bookPrice, bookStock, bookDiscount, bookIntro, bookContents)
 		values(#{bookName},#{authorId}, #{publeYear},#{publisher},#{cateCode},#{bookPrice},#{bookStock},#{bookDiscount},#{bookIntro},#{bookContents})
 
@@ -71,6 +77,13 @@
 		delete from vam_book where bookId = #{bookId}
 	
 	</delete>
+	
+		<!-- 이미지 등록 -->
+	<insert id="imageEnroll">
+	
+		insert into vam_image(bookId, fileName, uploadPath, uuid) values (#{bookId}, #{fileName}, #{uploadPath}, #{uuid})
+	
+	</insert>
 
  
   </mapper>

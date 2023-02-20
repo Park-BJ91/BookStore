@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vam.mapper.AdminMapper;
+import com.vam.model.AttachImageVO;
 import com.vam.model.BookVO;
 import com.vam.model.CateVO;
 import com.vam.model.Criteria;
@@ -26,6 +27,18 @@ public class AdminServiceImpl implements AdminService{
 		log.info("service bookEnroll");
 		
 		adminMapper.bookEnroll(book);
+		
+		if(book.getImageList() == null || book.getImageList().size() <= 0) {
+			return;
+		}
+		
+		for(int i = 0; i <book.getImageList().size(); i++) {
+			AttachImageVO AtVO = new AttachImageVO();
+			
+			AtVO.setBookId(book.getBookId());
+			adminMapper.imageEnroll(AtVO);
+		}
+		
 	}
 	/* 카테고리 리스트 */
 	@Override

@@ -12,11 +12,39 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-  
 <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
-</head>
+<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+<style type="text/css">
+	#result_card img{
+		max-width: 100%;
+	    height: auto;
+	    display: block;
+	    padding: 5px;
+	    margin-top: 10px;
+	    margin: auto;	
+	}
+	#result_card {
+		position: relative;
+	}
+	.imgDeleteBtn{
+	    position: absolute;
+	    top: 0;
+	    right: 5%;
+	    background-color: #ef7d7d;
+	    color: wheat;
+	    font-weight: 900;
+	    width: 30px;
+	    height: 30px;
+	    border-radius: 50%;
+	    line-height: 26px;
+	    text-align: center;
+	    border: none;
+	    display: block;
+	    cursor: pointer;	
+	}
+	
+</style>  
 </head>
 				<%@include file="../includes/admin/header.jsp" %>
 
@@ -141,7 +169,9 @@
                     				<label>상품 이미지</label>
                     			</div>
                     			<div class="form_section_content">
-									<input type="file" id ="fileItem" name='uploadFile' style="height: 30px;" multiple="multiple">
+									<input type="file" id ="fileItem" name='uploadFile' style="height: 30px;">
+									<div id="uploadResult">
+									</div>			
                     			</div>
                     		</div>  
                    		</form>
@@ -466,9 +496,16 @@ $("input[name='bookPrice']").on("change", function(){
 	
 	//FileList 객체(<input> 태그의 files 속성)에 접근을 해야합니다.
 	//FileList 객체의 접근은 <input>태그의 change 이벤트를 통해서 접근이 가능하게 됩니다.
+	
 	/* 이미지 업로드 */
 $("input[type='file']").on("change", function(e){
-		
+	
+	/* 이미지 존재시 삭제 */
+	if($(".imgDeleteBtn").length > 0){
+		deleteFile();
+	}
+	
+	let formData = new FormData();
 	let fileInput = $('input[name="uploadFile"]');
 	let fileList = fileInput[0].files;
 	let fileObj = fileList[0];
@@ -477,7 +514,33 @@ $("input[type='file']").on("change", function(e){
 		return false;
 	}
 	
-	alert("통과");
+	/*<input> 태그에 multiple 속성을 부여하여서 사용자가 여러 개의 파일을 선택
+	for(let i = 0; i < fileList.length; i++){
+		formData.append("uploadFile", fileList[i]);
+	}
+	*/
+		
+	//단일만 파일 선택시
+	formData.append("uploadFile", fileObj);
+	
+	$.ajax({
+		url: '/admin/uploadAjaxAction',
+    	processData : false,
+    	contentType : false,
+    	data : formData,
+    	type : 'POST',
+    	dataType : 'json',
+    	success : function(result){
+    		console.log(result);
+    		showUploadImage(result);
+    	},
+    	error : function(result){
+    		alert("이미지 파일이 아닙니다.");
+    		
+    	}
+    		
+	});
+	
 					
 	
 });
@@ -503,6 +566,64 @@ function fileCheck(fileName, fileSize){
 }
 
 
+/* 이미지 출력 */
+function showUploadImage(uploadResultArr){
+	
+	/* 전달받은 데이터 검증 */
+	if(!uploadResultArr || uploadResultArr.length == 0){return}
+	
+	let uploadResult = $("#uploadResult");
+	
+	let obj = uploadResultArr[0];
+	
+	let str = "";
+	
+	let fileCallPath = encodeURIComponent(obj.uploadPath.replace(/\\/g, '/') + "/s_" + obj.uuid + "_" + obj.fileName);
+	
+	str += "<div id='result_card'>";
+	str += "<img src='/display?fileName=" + fileCallPath +"'>";
+	str += "<div class='imgDeleteBtn' data-file='" + fileCallPath + "'>x</div>";
+	str += "</div>";
+	str += "<input type='hidden' name='imageList[0].fileName' value='"+ obj.fileName +"'>";
+	str += "<input type='hidden' name='imageList[0].uuid' value='"+ obj.uuid +"'>";
+	str += "<input type='hidden' name='imageList[0].uploadPath' value='"+ obj.uploadPath +"'>";	
+	
+		uploadResult.append(str);     
+    
+}
+/* 이미지 삭제 버튼 동작 */
+$("#uploadResult").on("click", ".imgDeleteBtn", function(e){
+	
+	deleteFile();
+	
+});
+
+/* 파일 삭제 메서드 */
+function deleteFile(){
+	
+	let targetFile = $(".imgDeleteBtn").data("file");
+	
+	let targetDiv = $("#result_card");
+	
+	$.ajax({
+		url: '/admin/deleteFile',
+		data : {fileName : targetFile},
+		dataType : 'text',
+		type : 'POST',
+		success : function(result){
+			console.log(result);
+			
+			targetDiv.remove();
+			$("input[type='file']").val("");
+			
+		},
+		error : function(result){
+			console.log(result);
+			
+			alert("파일을 삭제하지 못하였습니다.")
+		}
+	});
+}
 </script> 	
  
 </body>
