@@ -52,3 +52,22 @@
   			SELECT ISEQ$$_74040.currval from dual
   		
   		</selectKey>  	
+  		
+  		
+  	 "TO_CHAR"과 DATE_FORMAT"은 지정 시간을 원하는 형태로 출력시켜주는 함수 	
+  		
+  	<!-- Oracle -->
+	<!-- 어제자 날자 이미지 리스트 -->
+	<select id="checkFileList" resultType="com.vam.model.AttachImageVO">
+	
+		select * from vam_image where uploadpath = to_char(sysdate -1, 'yyyy\mm\dd')	
+	
+	</select>
+
+<!-- MySQL -->
+	<!-- 어제자 날자 이미지 리스트 -->
+	<select id="checkFileList" resultType="com.vam.model.AttachImageVO">
+	
+		select * from vam_image where uploadpath = DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -1 DAY), '%Y\%m\%d')	
+	
+	</select>	

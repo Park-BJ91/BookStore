@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.vam.mapper.MemberMapperTest" time="0.076" errors="1" skipped="0">
+<testsuite tests="1" failures="0" name="com.vam.mapper.MemberMapperTest" time="0.031" errors="1" skipped="0">
   <properties>
     <property name="jansi.mode" value="strip"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -27,9 +27,9 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Spring\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf15331033360459224172.tmp"/>
+    <property name="classworlds.conf" value="C:\Spring\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6801916741976276552.tmp"/>
     <property name="sun.jnu.encoding" value="MS949"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.17\bin\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\팍\AppData\Local\Microsoft\WindowsApps;C:\Users\팍\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.2\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.17\bin\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\팍\AppData\Local\Microsoft\WindowsApps;C:\Users\팍\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.2\bin;;."/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -62,7 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.vam.mapper.MemberMapperTest" name="memberJoin" time="0.076">
+  <testcase classname="com.vam.mapper.MemberMapperTest" name="memberJoin" time="0.031">
     <error message="
 ### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &apos;test213&apos; for key &apos;book_member.PRIMARY&apos;
 ### The error may exist in com/vam/mapper/MemberMapper.xml
@@ -82,11 +82,11 @@
 	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
-	at com.sun.proxy.$Proxy21.insert(Unknown Source)
+	at com.sun.proxy.$Proxy22.insert(Unknown Source)
 	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
-	at com.sun.proxy.$Proxy22.memberJoin(Unknown Source)
+	at com.sun.proxy.$Proxy28.memberJoin(Unknown Source)
 	at com.vam.mapper.MemberMapperTest.memberJoin(MemberMapperTest.java:32)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -147,11 +147,7 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry &a
 	... 43 more
 </error>
     <system-out>INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@793be5ca, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2df9b86, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@37654521, org.springframework.test.context.support.DirtiesContextTestExecutionListener@15aab8c6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@33990a0c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4de4b452, org.springframework.test.context.event.EventPublishingTestExecutionListener@50b5ac82]
-INFO : com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-INFO : com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@31d6f3fe, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@760cf594, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@aa149ed, org.springframework.test.context.support.DirtiesContextTestExecutionListener@37303f12, org.springframework.test.context.transaction.TransactionalTestExecutionListener@31ff6309, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@204e90f7, org.springframework.test.context.event.EventPublishingTestExecutionListener@20a05b32]
 </system-out>
-    <system-err>SLF4J: This version of SLF4J requires log4j version 1.2.12 or later. See also http://www.slf4j.org/codes.html#log4j_version
-</system-err>
   </testcase>
 </testsuite>

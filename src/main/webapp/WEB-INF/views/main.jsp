@@ -40,7 +40,7 @@
                         마이룸
                     </li>
                     <li>
-                        장바구니
+                        <a href="/cart/${member.memberId}">장바구니</a>
                     </li>
                 </c:if>              
                 <li>
@@ -53,7 +53,18 @@
 				<a href="/main"><img src="resources/img/mLogo.png"></a>
 			</div>
 			<div class="search_area">
-				<h1>Search area</h1>
+				    <div class="search_wrap">
+                		<form id="searchForm" action="/search" method="get">
+                			<div class="search_input">
+                			    <select name="type">
+                					<option value="T">책 제목</option>
+                					<option value="A">작가</option>
+                				</select>
+                				<input type="text" name="keyword">
+                    			<button class='btn search_btn'>검 색</button>                				
+                			</div>
+                		</form>
+                	</div>
 			</div>
 			<div class="login_area">
                 				<!-- 로그인 하지 않은 상태 -->
@@ -78,7 +89,26 @@
 			<div class="clearfix"></div>			
 		</div>
 		<div class="navi_bar_area">
-			<h1>navi area</h1>
+			<div class="dropdown">
+			    <button class="dropbtn">국내 
+			      <i class="fa fa-caret-down"></i>
+			    </button>
+			    <div class="dropdown-content">
+			    	<c:forEach items="${cate1}" var="cate"> 
+			    		<a href="search?type=C&cateCode=${cate.cateCode}">${cate.cateName}</a>
+			    	</c:forEach>     		      		      
+			    </div>			
+			</div>
+			<div class="dropdown">
+			    <button class="dropbtn">국외 
+			      <i class="fa fa-caret-down"></i>
+			    </button>
+			    <div class="dropdown-content">
+			    	<c:forEach items="${cate2}" var="cate"> 
+			    		<a href="search?type=C&cateCode=${cate.cateCode}">${cate.cateName}</a>
+			    	</c:forEach>      		      		      
+			    </div>			
+			</div>
 		</div>
 		<div class="content_area">
 			<h1>content area</h1>

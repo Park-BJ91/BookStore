@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.vam.mapper.AdminMapper;
 import com.vam.model.AttachImageVO;
@@ -21,6 +22,7 @@ public class AdminServiceImpl implements AdminService{
 	private AdminMapper adminMapper;
 	
 	/* 상품 등록 */
+	@Transactional
 	@Override
 	public void bookEnroll(BookVO book) {
 		
@@ -32,12 +34,13 @@ public class AdminServiceImpl implements AdminService{
 			return;
 		}
 		
-		for(int i = 0; i <book.getImageList().size(); i++) {
-			AttachImageVO AtVO = new AttachImageVO();
+		
+		book.getImageList().forEach(attach ->{
 			
-			AtVO.setBookId(book.getBookId());
-			adminMapper.imageEnroll(AtVO);
-		}
+			attach.setBookId(book.getBookId());
+			adminMapper.imageEnroll(attach);
+			
+		});
 		
 	}
 	/* 카테고리 리스트 */
@@ -76,24 +79,50 @@ public class AdminServiceImpl implements AdminService{
 	
 	
 	/* 상품 정보 수정 */
+	@Transactional
 	@Override
 	public int goodsModify(BookVO vo) {
 		
-		log.info("goodsModify........");
+		int result = adminMapper.goodsModify(vo);
 		
-		return adminMapper.goodsModify(vo);
+		if(result == 1 && vo.getImageList() != null && vo.getImageList().size() > 0) {
+			
+			adminMapper.deleteImageAll(vo.getBookId());
+			
+			vo.getImageList().forEach(attach -> {
+				
+				attach.setBookId(vo.getBookId());
+				adminMapper.imageEnroll(attach);
+				
+			});
+			
+		}
+		
+		return result;
 		
 	}
 	
 	
 	/* 상품 정보 삭제 */
 	@Override
+	@Transactional
 	public int goodsDelete(int bookId) {
 
 		log.info("goodsDelete..........");
 		
+		adminMapper.deleteImageAll(bookId);
+		
 		return adminMapper.goodsDelete(bookId);
-	}		
+	}
+	
+	/* 지정 상품 이미지 정보 얻기 */
+	@Override
+	public List<AttachImageVO> getAttachInfo(int bookId) {
+		
+		log.info("getAttachInfo........");
+		
+		return adminMapper.getAttachInfo(bookId);
+	}
 	
 	
 	

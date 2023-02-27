@@ -1,12 +1,14 @@
 package com.vam.mapper;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.vam.model.BookVO;
+import com.vam.model.AttachImageVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
@@ -78,6 +80,7 @@ public class AdminMapperTest {
 	*/
 	
 	/* 상품 정보 수정 */
+	/*
 	@Test
 	public void goodsModifyTest() {
 		
@@ -98,8 +101,40 @@ public class AdminMapperTest {
 		mapper.goodsModify(book);
 		
 	}
+	*/
+	/* 지정 상품 이미지 삭제 */
+	/*
+	@Test
+	public void deleteImageAllTest() {
+		
+		int bookId = 3124;
+		
+		mapper.deleteImageAll(bookId);
+		
+	}
+	*/
+	/* 어제자 날짜 이미지 리스트 */
+	/*
+	@Test
+	public void checkImageListTest() {
+		
+		mapper.checkFileList();
+		
+	}
+	*/
 	
-	
+	/* 지정 상품 이미지 정보 얻기 */
+	@Test
+	public void getAttachInfoTest() {
+		
+		int bookId = 25;
+		
+		
+		List<AttachImageVO> list = mapper.getAttachInfo(bookId);
+		
+		System.out.println("list : " + list);
+		
+	}
 	
 	
 }

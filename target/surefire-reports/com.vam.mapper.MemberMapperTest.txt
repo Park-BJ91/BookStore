@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.vam.mapper.MemberMapperTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1 sec <<< FAILURE!
-memberJoin(com.vam.mapper.MemberMapperTest)  Time elapsed: 0.076 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.032 sec <<< FAILURE!
+memberJoin(com.vam.mapper.MemberMapperTest)  Time elapsed: 0.031 sec  <<< ERROR!
 org.springframework.dao.DuplicateKeyException: 
 ### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'test213' for key 'book_member.PRIMARY'
 ### The error may exist in com/vam/mapper/MemberMapper.xml
@@ -15,11 +15,11 @@ org.springframework.dao.DuplicateKeyException:
 	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
-	at com.sun.proxy.$Proxy21.insert(Unknown Source)
+	at com.sun.proxy.$Proxy22.insert(Unknown Source)
 	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:93)
-	at com.sun.proxy.$Proxy22.memberJoin(Unknown Source)
+	at com.sun.proxy.$Proxy28.memberJoin(Unknown Source)
 	at com.vam.mapper.MemberMapperTest.memberJoin(MemberMapperTest.java:32)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

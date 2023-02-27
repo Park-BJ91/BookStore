@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.vam.paresistence.HikariTest" time="0" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.vam.paresistence.HikariTest" time="0.001" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="strip"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -27,9 +27,9 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Spring\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf15331033360459224172.tmp"/>
+    <property name="classworlds.conf" value="C:\Spring\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6801916741976276552.tmp"/>
     <property name="sun.jnu.encoding" value="MS949"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.17\bin\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\팍\AppData\Local\Microsoft\WindowsApps;C:\Users\팍\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.2\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.17\bin\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\팍\AppData\Local\Microsoft\WindowsApps;C:\Users\팍\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.2\bin;;."/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -62,5 +62,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.vam.paresistence.HikariTest" name="testConnection" time="0"/>
+  <testcase classname="com.vam.paresistence.HikariTest" name="testConnection" time="0.001"/>
 </testsuite>
