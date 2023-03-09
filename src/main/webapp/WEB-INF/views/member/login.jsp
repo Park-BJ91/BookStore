@@ -13,6 +13,7 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+<link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">  
 </head>
 <body>
 
@@ -22,7 +23,9 @@
 	    <form id="login_form" method="post">
 
 		<div class="logo_wrap">
-			<span>Book Mall</span>
+
+			<span>Login Page</span>
+
 		</div>
 		<div class="login_wrap"> 
 			<div class="id_wrap">
@@ -32,7 +35,8 @@
 			</div>
 			<div class="pw_wrap">
 				<div class="pw_input_box">
-					<input class="pw_iput" name="memberPw">
+					<input type="password" class="pw_iput" name="memberPw">
+					 <i class="fa fa-eye fa-lg"></i>
 				</div>
 			</div>			
             	<c:if test = "${result == 0 }">
@@ -42,6 +46,10 @@
 				<input type="button" class="login_button" value="로그인">
 			</div>			
 		</div>
+		
+			<div class="join_button_wrap">
+				<a href="join" class="join_button">회원 가입</a>			
+			</div>
 			 
     </form>	
 	</div>
@@ -50,6 +58,19 @@
 
 
 <script>
+
+$(document).ready(function(){
+    $('.pw_wrap i').on('click',function(){
+        $('input').toggleClass('active');
+        if($('input').hasClass('active')){
+            $(this).attr('class',"fa fa-eye-slash fa-lg")
+            .prev('input').attr('type',"text");
+        }else{
+            $(this).attr('class',"fa fa-eye fa-lg")
+            .prev('input').attr('type','password');
+        }
+    });
+});
  
     /* 로그인 버튼 클릭 메서드 */
     $(".login_button").click(function(){
@@ -61,6 +82,12 @@
         $("#login_form").submit();
         
     });
+    
+$(".Logo_wrap").on("click",function(e){
+	
+	history.back();
+	
+});
  
 </script>
 </body>

@@ -16,6 +16,9 @@ public class Criteria {
     /* 검색 타입 */
     private String type;
     
+	/* 상품 번호(댓글 기능에서 사용) */
+	private int bookId;
+    
     public String[] getAuthorArr() {
 		return authorArr;
 	}
@@ -82,6 +85,16 @@ public class Criteria {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+	
+	
+
+	public int getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(int bookId) {
+		this.bookId = bookId;
+	}
 
 	/* Criteria 생성자 */
     public Criteria(int pageNum, int amount) {
@@ -102,8 +115,9 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", skip=" + skip + ", type=" + type
-				+ ", keyword=" + keyword + ", authorArr=" + Arrays.toString(authorArr) + ", cateCode=" + cateCode + "]";
+		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", skip=" + skip + ", type=" + type + ", bookId="
+				+ bookId + ", keyword=" + keyword + ", authorArr=" + Arrays.toString(authorArr) + ", cateCode="
+				+ cateCode + "]";
 	}
     
        

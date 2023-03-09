@@ -23,7 +23,9 @@ import com.vam.model.AttachImageVO;
 import com.vam.model.BookVO;
 import com.vam.model.Criteria;
 import com.vam.model.PageDTO;
+import com.vam.model.ReplyDTO;
 import com.vam.service.BookService;
+import com.vam.service.ReplyService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -41,6 +43,9 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 	
+	@Autowired
+	private ReplyService replyService;
+	
 	/* 이미지 정보 반환 */
 	@GetMapping(value="/getAttachList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<AttachImageVO>> getAttachList(int bookId){
@@ -57,6 +62,7 @@ public class BookController {
 		log.info("메인 페이지 진입");
 		model.addAttribute("cate1", bookService.getCateCode1());
 		model.addAttribute("cate2", bookService.getCateCode2());
+		model.addAttribute("ls", bookService.likeSelect());
 	}
 	
 	@GetMapping("/display")
@@ -127,5 +133,24 @@ public class BookController {
 		return "/goodsDetail";
 	}
 	
+	/* 리뷰 쓰기 */
+	@GetMapping("/replyEnroll/{memberId}")
+	public String replyEnrollWindowGET(@PathVariable("memberId")String memberId, int bookId, Model model) {
+		BookVO book = bookService.getBookIdName(bookId);
+		model.addAttribute("bookInfo",book);
+		model.addAttribute("memberId",memberId);
+		
+		return "/replyEnroll";
+	}
 	
+	/* 리뷰 수정 팝업창 */
+	@GetMapping("/replyUpdate")
+	public String replyUpdateWindowGET(ReplyDTO dto, Model model) {
+		BookVO book = bookService.getBookIdName(dto.getBookId());
+		model.addAttribute("bookInfo", book);
+		model.addAttribute("replyInfo", replyService.getUpdateReply(dto.getReplyId()));
+		model.addAttribute("memberId", dto.getMemberId());
+		
+		return "/replyUpdate";
+	}
 }

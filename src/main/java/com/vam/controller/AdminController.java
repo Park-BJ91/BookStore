@@ -34,9 +34,12 @@ import com.vam.model.AttachImageVO;
 import com.vam.model.AuthorVO;
 import com.vam.model.BookVO;
 import com.vam.model.Criteria;
+import com.vam.model.OrderCancelDTO;
+import com.vam.model.OrderDTO;
 import com.vam.model.PageDTO;
 import com.vam.service.AdminService;
 import com.vam.service.AuthorService;
+import com.vam.service.OrderService;
 
 import lombok.extern.log4j.Log4j;
 import net.coobird.thumbnailator.Thumbnails;
@@ -51,6 +54,9 @@ public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
+	
+	@Autowired
+	private OrderService orderService;
 	
 	
 	
@@ -472,6 +478,32 @@ public class AdminController {
 			
 		}
 		return new ResponseEntity<String>("success", HttpStatus.OK);
+	}
+	
+	/* 주문 현황 페이지 */
+	@GetMapping("/orderList")
+	public String orderListGET(Criteria cri, Model model) {
+		
+		List<OrderDTO> list = adminService.getOrderList(cri);
+		
+		if(!list.isEmpty()) {
+			model.addAttribute("list", list);
+			model.addAttribute("pageMaker", new PageDTO(cri, adminService.getOrderTotal(cri)));
+		} else {
+			model.addAttribute("listCheck", "empty");
+		}
+
+		
+		return "/admin/orderList";
+	}
+	
+	/* 주문삭제 */
+	@PostMapping("/orderCancel")
+	public String orderCanclePOST(OrderCancelDTO dto) {
+		
+		orderService.orderCancel(dto);
+		
+		return "redirect:/admin/orderList?keyword=" + dto.getKeyword() + "&amount=" + dto.getAmount() + "&pageNum=" + dto.getPageNum();
 	}
 	
     

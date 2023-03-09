@@ -18,7 +18,8 @@
 /* 페이지 로고 */
 .logo_wrap{
 	text-align: center;	
-	margin: 150px 0;	
+	margin: 150px 0;
+	color : rgb(0,128,255);	
 }
 .logo_wrap>span{
 	font-size : 50px;
@@ -66,6 +67,7 @@
 	margin-top: 40px;
 	text-align: center;
 }
+
 .login_button{
 	width: 84%;
     height: 80px;
@@ -76,11 +78,37 @@
     margin : auto;
 }
 
+.join_button_wrap{
+	margin-top: 30px;
+	text-align: center;
+}
+
+.join_button{
+	width: 84%;
+    height: 80px;
+    background-color: #6AAFE6;
+    font-size: 40px;
+    font-weight: 900;
+    color: white;
+    margin : auto;
+}
+
+
+
 
 .login_warn{
     margin-top: 30px;
     text-align: center;
     color : red;
+}
+
+/* 비밀번호 보이기 */
+
+.fa fa-eye fa-lg{
+    position: absolute;
+    left: 125%;
+    top: 27px;
+    color: orange;
 }
 
 /* float 속성 해제 */

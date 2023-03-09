@@ -11,6 +11,7 @@ import com.vam.model.AttachImageVO;
 import com.vam.model.BookVO;
 import com.vam.model.CateVO;
 import com.vam.model.Criteria;
+import com.vam.model.OrderDTO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -124,7 +125,17 @@ public class AdminServiceImpl implements AdminService{
 		return adminMapper.getAttachInfo(bookId);
 	}
 	
+	@Override
+	public List<OrderDTO> getOrderList(Criteria cri) {
+			
+		return adminMapper.getOrderList(cri);
+	}
 	
 	
+	@Override
+	public int getOrderTotal(Criteria cri) {
+		// TODO Auto-generated method stub
+		return adminMapper.getOrderTotal(cri);
+	}
 	
 }
