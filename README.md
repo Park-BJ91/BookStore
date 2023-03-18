@@ -30,4 +30,12 @@
 <br>
 
 ### Main Page
+<br>
+
+### Main View
 ![main Img](https://user-images.githubusercontent.com/116561589/226113206-75007ca2-e27f-43e1-af81-127f7e843663.png)
+
+
+<br><br>
+### 비동기식 로그아웃 처리
+![Logout](https://user-images.githubusercontent.com/116561589/226119821-dcc7a805-2a0e-4d02-bfbf-e42b5cb933cf.png)
