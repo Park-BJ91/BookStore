@@ -26,6 +26,8 @@
 
 <br><br>
 
+# 주요 페이지 AND CODE
+<br>
 
-
+### Main Page
 ![main Img](https://user-images.githubusercontent.com/116561589/226113206-75007ca2-e27f-43e1-af81-127f7e843663.png)
