@@ -37,5 +37,5 @@
 
 
 <br><br>
-### 비동기식 로그아웃 처리
+### 로그아웃 처리
 ![Logout](https://user-images.githubusercontent.com/116561589/226119821-dcc7a805-2a0e-4d02-bfbf-e42b5cb933cf.png)
