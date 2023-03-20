@@ -92,6 +92,17 @@
 ### 관리자 페이지
 ![admin Manager](https://user-images.githubusercontent.com/116561589/226432321-a85bd18c-1ec3-4c33-97a5-fb6ea5f7ccf9.png)
 
+<br><br>
+### 작가 수정
+<br><br>
+![author Modify](https://user-images.githubusercontent.com/116561589/226458130-66db66f0-e0ae-489d-9e6b-a17425479f7a.png)
+<br><br>
+![author Modify2](https://user-images.githubusercontent.com/116561589/226458146-d99e47ad-d5be-492e-89bb-dee959541844.png)
+<br><br>
+![author Modify3](https://user-images.githubusercontent.com/116561589/226458194-e9b38f03-ddcb-4a76-ac94-4ef845c73018.png)
+
+
+
 
 
 
