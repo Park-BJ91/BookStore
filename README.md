@@ -39,3 +39,18 @@
 <br><br>
 ### 로그아웃 처리
 ![Logout](https://user-images.githubusercontent.com/116561589/226119821-dcc7a805-2a0e-4d02-bfbf-e42b5cb933cf.png)
+
+<br><br>
+### 회원가입
+![join](https://user-images.githubusercontent.com/116561589/226374831-3379bc12-19ea-4df6-95d2-8faf9c4d25bf.png)
+
+<br><br>
+### 네이버 Email API
+![email](https://user-images.githubusercontent.com/116561589/226394243-5a4f00bb-935b-4177-a2ed-073825151a77.png)
+
+<br><br>
+### 다음주소 API
+![addr](https://user-images.githubusercontent.com/116561589/226394883-c09c72f5-5d29-458e-8679-1d264c726039.png)
+
+<br><br><br>
+![addr2](https://user-images.githubusercontent.com/116561589/226396333-0aad27b8-1dce-4a61-aa1b-d8bc510132d6.png)
