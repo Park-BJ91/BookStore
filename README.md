@@ -2,7 +2,6 @@
 
 온라인 서점
 
-학원에서 Spring 팀 프로젝트를 진행하지 못하여 홀로 진행
 
 (Kim VamPa 블로그를 보며 공부)
 
@@ -101,8 +100,30 @@
 <br><br>
 ![author Modify3](https://user-images.githubusercontent.com/116561589/226458194-e9b38f03-ddcb-4a76-ac94-4ef845c73018.png)
 
+<br><br>
+### 작가 삭제
+<br><br>
+![author Delete](https://user-images.githubusercontent.com/116561589/226541604-3f24a056-3d47-4d8f-bfcb-db3a2fbda65c.png)
+<br><br>
+![author Delete2](https://user-images.githubusercontent.com/116561589/226541608-30d3fd36-b18a-43a4-9075-8c79ba75a761.png)
+<br><br>
+![author Delete3](https://user-images.githubusercontent.com/116561589/226541619-a5de7973-2a56-48dc-b6ec-4de70e1c44f2.png)
 
+<br><br>
+### 작가 관리 페이지
+<br><br>
+![author Manager](https://user-images.githubusercontent.com/116561589/226580606-41e2871b-371d-4f55-bc38-9b4905968486.png)
 
+<br><br>
+![Author Search4](https://user-images.githubusercontent.com/116561589/226580649-7d736f25-e07a-4338-ad41-be510f70b038.png)
+<br><br>
+![author Search](https://user-images.githubusercontent.com/116561589/226580664-91041f47-6d21-47e9-a9a0-fae4c3678160.png)
+<br><br>
+![author Search2](https://user-images.githubusercontent.com/116561589/226580669-00e0f619-232d-41e6-b5e6-ad21dbf670bd.png)
+<br><br>
+![author Search3](https://user-images.githubusercontent.com/116561589/226580680-044b3c7a-21c6-455f-912e-fd4b8d4076ae.png)
+<br><br>
+![image](https://user-images.githubusercontent.com/116561589/226581242-38855e7f-0727-4ab2-8598-ee05727e56e5.png)
 
 
 
